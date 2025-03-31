@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Générateur de mot de passe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Générateur de mot de passe</h2>
+        <form method="POST">
+            <label for="length">Longueur du mot de passe :</label>
+            <input type="number" name="length" min="4" max="50" required>
+            <button type="submit">Générer</button>
+        </form>
+        {% if password %}
+            <p>Mot de passe généré : <strong>{{ password }}</strong></p>
+        {% endif %}
+    </div>
+</body>
+</html>
